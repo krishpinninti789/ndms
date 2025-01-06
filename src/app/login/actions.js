@@ -17,24 +17,23 @@ export async function login(formData) {
 
   const { data: user, error } = await supabase.auth.signInWithPassword(data);
 
-  const userId = user?.user?.id;
+  const userId = user?.user.id;
   console.log(userId);
 
-  const { profdata: profileData, error: profileError } = await supabase
+  const { data: profileData, error: profileError } = await supabase
     .from("profiles")
     .select("*")
-    .eq("id", { userId });
-
-  console.log(profileError);
-  console.log(profileData);
+    .eq("id", userId);
+  console.log(profileData[0].fullname);
+  console.log(profileData.fullname);
 
   if (error) {
     redirect("/error");
   } else {
-    if (profileData.role === "admin") {
+    if (profileData[0].role === "admin") {
       revalidatePath("/", "layout");
       redirect("/admin");
-    } else if (profData.role === "superAdmin") {
+    } else if (profileData[0].role === "superAdmin") {
       revalidatePath("/", "layout");
       redirect("/superadmin");
     } else {
