@@ -18,27 +18,26 @@ export async function login(formData) {
   const { data: user, error } = await supabase.auth.signInWithPassword(data);
 
   const userId = user?.user.id;
-  console.log(userId);
+  // console.log(userId);
 
   const { data: profileData, error: profileError } = await supabase
     .from("profiles")
     .select("*")
     .eq("id", userId);
-  console.log(profileData[0].fullname);
-  console.log(profileData.fullname);
+  // console.log(profileData[0].fullname);
 
   if (error) {
     redirect("/error");
   } else {
     if (profileData[0].role === "admin") {
       revalidatePath("/", "layout");
-      redirect(`/admin/`);
+      redirect(`/admin/dashboard`);
     } else if (profileData[0].role === "superAdmin") {
       revalidatePath("/", "layout");
-      redirect(`/superadmin/`);
+      redirect(`/superadmin/dashboard`);
     } else {
       revalidatePath("/", "layout");
-      redirect(`/student/`);
+      redirect(`/student/dashboard`);
     }
   }
 }
