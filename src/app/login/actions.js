@@ -31,13 +31,13 @@ export async function login(formData) {
   } else {
     if (profileData[0].role === "admin") {
       revalidatePath("/", "layout");
-      redirect(`/admin/dashboard`);
+      redirect(`/admin/home`);
     } else if (profileData[0].role === "superAdmin") {
       revalidatePath("/", "layout");
-      redirect(`/superadmin/dashboard`);
+      redirect(`/superadmin/home`);
     } else {
       revalidatePath("/", "layout");
-      redirect(`/student/dashboard`);
+      redirect(`/student/home`);
     }
   }
 }
