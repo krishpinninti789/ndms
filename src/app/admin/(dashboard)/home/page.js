@@ -35,10 +35,6 @@ const HomePage = () => {
         setStudentData(studentData);
       }
       setLoading(false);
-      const dues = await fetch("/api/studentdue").then((response) =>
-        response.json().then((data) => console.log(data))
-      );
-      console.log(dues);
     };
 
     fetchStudentData();

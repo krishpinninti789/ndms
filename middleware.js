@@ -1,4 +1,5 @@
 import { updateSession } from "@/app/utils/supabase/middleware";
+import { redirect } from "next/dist/server/api-utils";
 
 export async function middleware(request) {
   // update user's auth session
