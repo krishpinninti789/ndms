@@ -53,7 +53,7 @@ const data = {
   navMain: [
     {
       title: "Home",
-      url: "/superadmin/home",
+      url: "/admin/home",
       icon: SquareTerminal,
       isActive: true,
       // items: [
@@ -72,8 +72,8 @@ const data = {
       // ],
     },
     {
-      title: "Add Students",
-      url: "/superadmin/addstudents",
+      title: "Students",
+      url: "#",
       icon: Bot,
       // items: [
       //   {

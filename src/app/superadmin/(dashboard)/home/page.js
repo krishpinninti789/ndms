@@ -5,12 +5,12 @@ import React from "react";
 import clsx from "clsx";
 
 const HomePage = () => {
-  const [studentData, setStudentData] = useState(null);
+  const [adminData, setAdminData] = useState(null);
   const [loading, setLoading] = useState(true);
   const supabase = createClient();
 
   useEffect(() => {
-    const fetchStudentData = async () => {
+    const fetchAdminData = async () => {
       const user = supabase.auth.getUser();
       const { data: userInfo, error } = await user;
       console.log(userInfo);
@@ -23,22 +23,22 @@ const HomePage = () => {
       const userId = userInfo?.user.id;
 
       // Fetch data based on user ID
-      const { data: studentData, error: fetchError } = await supabase
+      const { data: adminData, error: fetchError } = await supabase
         .from("profiles") // Replace with your table name
         .select("*")
         .eq("id", userId) // Assumes you store user IDs in the `students` table
         .single();
-      console.log(studentData);
+      console.log(adminData);
 
       if (fetchError) {
         console.error("Error fetching student data:", fetchError.message);
       } else {
-        setStudentData(studentData);
+        setAdminData(adminData);
       }
       setLoading(false);
     };
 
-    fetchStudentData();
+    fetchAdminData();
   }, [supabase]);
   return (
     <div
@@ -53,7 +53,7 @@ const HomePage = () => {
         <div>
           <h1 className="text-2xl font-bold">
             Welcome,{" "}
-            <span className="text-violet-600">{studentData?.fullname}</span>
+            <span className="text-violet-600">{adminData?.fullname}</span>
           </h1>
           {/* <p>
             You are role is the {studentData?.role} role. and mail id is

@@ -53,7 +53,7 @@ const data = {
   navMain: [
     {
       title: "Home",
-      url: "/superadmin/home",
+      url: "/student/home",
       icon: SquareTerminal,
       isActive: true,
       // items: [
@@ -72,8 +72,8 @@ const data = {
       // ],
     },
     {
-      title: "Add Students",
-      url: "/superadmin/addstudents",
+      title: "Dues",
+      url: "/student/dues",
       icon: Bot,
       // items: [
       //   {
@@ -90,52 +90,52 @@ const data = {
       //   },
       // ],
     },
-    // {
-    //   title: "Support",
-    //   url: "#",
-    //   icon: BookOpen,
-    //   // items: [
-    //   //   {
-    //   //     title: "Introduction",
-    //   //     url: "#",
-    //   //   },
-    //   //   {
-    //   //     title: "Get Started",
-    //   //     url: "#",
-    //   //   },
-    //   //   {
-    //   //     title: "Tutorials",
-    //   //     url: "#",
-    //   //   },
-    //   //   {
-    //   //     title: "Changelog",
-    //   //     url: "#",
-    //   //   },
-    //   // ],
-    // },
-    // {
-    //   title: "Profile",
-    //   url: "/student/profile",
-    //   icon: Settings2,
-    //   // items: [
-    //   //   {
-    //   //     title: "General",
-    //   //     url: "#",
-    //   //   },
-    //   //   {
-    //   //     title: "Team",
-    //   //     url: "#",
-    //   //   },
-    //   //   {
-    //   //     title: "Billing",
-    //   //     url: "#",
-    //   //   },
-    //   //   {
-    //   //     title: "Limits",
-    //   //     url: "#",
-    //   //   },
-    //   // ],
-    // },
+    {
+      title: "Support",
+      url: "#",
+      icon: BookOpen,
+      // items: [
+      //   {
+      //     title: "Introduction",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Get Started",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Tutorials",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Changelog",
+      //     url: "#",
+      //   },
+      // ],
+    },
+    {
+      title: "Profile",
+      url: "/student/profile",
+      icon: Settings2,
+      // items: [
+      //   {
+      //     title: "General",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Team",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Billing",
+      //     url: "#",
+      //   },
+      //   {
+      //     title: "Limits",
+      //     url: "#",
+      //   },
+      // ],
+    },
   ],
   projects: [
     {

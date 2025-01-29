@@ -18,7 +18,7 @@ export async function GET() {
       .select("*")
       .eq("id", userId)
       .single();
-    console.log(data);
+    // console.log(data);
 
     // console.log(extractAllBlogs);
     if (data) {

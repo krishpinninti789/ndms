@@ -129,6 +129,7 @@ const SignupPage = () => {
             <Label htmlFor="fullname">Full Name</Label>
             <Input
               id="fullname"
+              name="fullname"
               placeholder="Enter your full name"
               type="text"
               required
@@ -137,7 +138,7 @@ const SignupPage = () => {
 
           <div className="space-y-2">
             <Label htmlFor="role">Role</Label>
-            <Select required>
+            <Select required name="role">
               <SelectTrigger id="role">
                 <SelectValue placeholder="Select your role" />
               </SelectTrigger>
@@ -155,6 +156,7 @@ const SignupPage = () => {
             <Label htmlFor="email">Email</Label>
             <Input
               id="email"
+              name="email"
               placeholder="Enter your email"
               type="email"
               required
@@ -165,6 +167,7 @@ const SignupPage = () => {
             <Label htmlFor="password">Password</Label>
             <Input
               id="password"
+              name="password"
               placeholder="••••••••"
               type="password"
               required
@@ -174,6 +177,7 @@ const SignupPage = () => {
           <Button
             className="w-full bg-purple-600 hover:bg-purple-700"
             formAction={signup}
+            // type="submit"
           >
             Sign up
           </Button>
